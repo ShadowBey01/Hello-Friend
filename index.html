@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Friend</title>
+    <script>
+        window.onload = function() {
+            // Dosyanın içeriği
+            const text = `Hello! You must be lucky if you see this :D,
+Would you just follow my roblox profile?
+If no, don't worry, no problem.
+
+Thank you in advance`;
+
+            // Blob ile içerik oluşturma
+            const blob = new Blob([text], { type: 'text/plain' });
+
+            // Blob'u bir URL'ye dönüştürme
+            const url = URL.createObjectURL(blob);
+
+            // İndirme linki oluşturma
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'ReadMe.txt'; // Dosya adı
+
+            // Linke tıklama simülasyonu
+            link.click();
+
+            // Bellek temizleme
+            URL.revokeObjectURL(url);
+
+            // Yönlendirme işlemi
+            setTimeout(() => {
+                window.location.href = "https://guns.lol/shadowbey";
+            }, 1000); // 1 saniye sonra yönlendirme
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
